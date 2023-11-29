@@ -26,6 +26,8 @@ public class Deck {
         return cardsLeft;
     }
 
-    public Card deal()
+    public Card deal() {
+
+    }
 
 }
