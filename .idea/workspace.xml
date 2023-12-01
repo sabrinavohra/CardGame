@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Created classes and worked on Card and Deck classes.">
+    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Finished deck class and worked on Player class!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +81,22 @@
       <option name="project" value="LOCAL" />
       <updated>1701278350747</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished deck class and worked on Player class!">
+      <option name="closed" value="true" />
+      <created>1701287781528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701287781528</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created new constructor for Card class." />
     <MESSAGE value="Edited constructor for Card class." />
     <MESSAGE value="Created classes and worked on Card and Deck classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created classes and worked on Card and Deck classes." />
+    <MESSAGE value="Finished deck class and worked on Player class!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished deck class and worked on Player class!" />
   </component>
 </project>
