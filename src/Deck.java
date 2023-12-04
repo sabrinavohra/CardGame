@@ -29,7 +29,7 @@ public class Deck {
         if(cards.size() == 0) {
             return null;
         }
-        return cards[cardsLeft];
+        return cards.get(cardsLeft);
     }
 
     public void shuffle() {

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Finished deck class and worked on Player class!">
+    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Finished player class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701287781528</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finished player class">
+      <option name="closed" value="true" />
+      <created>1701453242095</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701453242095</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -97,6 +107,7 @@
     <MESSAGE value="Edited constructor for Card class." />
     <MESSAGE value="Created classes and worked on Card and Deck classes." />
     <MESSAGE value="Finished deck class and worked on Player class!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished deck class and worked on Player class!" />
+    <MESSAGE value="Finished player class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished player class" />
   </component>
 </project>
