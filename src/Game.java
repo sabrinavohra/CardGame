@@ -19,6 +19,7 @@ public class Game {
     }
     private void playGame() {
         printInstructions();
+        dealCards();
         System.out.println(theDeck.deal());
     }
 
