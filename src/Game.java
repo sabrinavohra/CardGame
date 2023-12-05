@@ -21,7 +21,20 @@ public class Game {
     private void playGame() {
         printInstructions();
         dealCards();
-        System.out.println(theDeck.deal());
+        //putDeckDown();
+        //flipFirstCard();
+        //do while(someone hasn't won / hasn't gotten rid of all their cards)
+            //let player put down card that matches with the one on top of stack in at least one way (check) - placeCard();
+            //let other play do the same thing - placeCard();
+            //if a player (has no cards that match the top one)
+                //add card to their hand until they can put down a card - addCard();
+            //after each turn check if: they have won - hasWon();
+                //end game (!!) if they have and ask if they want to play again - playAgain();
+                //continue game if they haven't
+
+
+
+        //System.out.println(theDeck.deal());
     }
 
     private void dealCards() {
