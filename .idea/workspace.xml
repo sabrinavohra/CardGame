@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Finished player class">
+    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Made some changes to help Game run.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,71 @@
       <option name="project" value="LOCAL" />
       <updated>1701453242095</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Worked on Game class">
+      <option name="closed" value="true" />
+      <created>1701729989781</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701729989781</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Worked on Game class">
+      <option name="closed" value="true" />
+      <created>1701730718482</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701730718482</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Worked on placeCard method.">
+      <option name="closed" value="true" />
+      <created>1701804100669</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701804100669</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Wrote out pseudo code for playGame() method.">
+      <option name="closed" value="true" />
+      <created>1701804702756</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701804702756</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Worked on Game class">
+      <option name="closed" value="true" />
+      <created>1701843246444</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701843246444</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Finished draft of Game class">
+      <option name="closed" value="true" />
+      <created>1701844843144</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701844843144</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tried to run a game.">
+      <option name="closed" value="true" />
+      <created>1701886641654</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701886641654</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Made some changes to help Game run.">
+      <option name="closed" value="true" />
+      <created>1701892415840</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701892415841</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -108,6 +173,12 @@
     <MESSAGE value="Created classes and worked on Card and Deck classes." />
     <MESSAGE value="Finished deck class and worked on Player class!" />
     <MESSAGE value="Finished player class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished player class" />
+    <MESSAGE value="Worked on placeCard method." />
+    <MESSAGE value="Wrote out pseudo code for playGame() method." />
+    <MESSAGE value="Worked on Game class" />
+    <MESSAGE value="Finished draft of Game class" />
+    <MESSAGE value="Tried to run a game." />
+    <MESSAGE value="Made some changes to help Game run." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some changes to help Game run." />
   </component>
 </project>

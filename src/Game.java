@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Game {
     private Player p1;
@@ -8,7 +9,6 @@ public class Game {
     private Deck theDeck;
     private ArrayList<Card> stack;
     private boolean currentPlayer;
-    private ArrayList<Card> currentPlayerHand;
     public static boolean bPlayer1 = true;
     public static boolean bPlayer2 = false;
 
@@ -19,6 +19,17 @@ public class Game {
         p2 = player2;
         p2Hand = new ArrayList<Card>();
         currentPlayer = true;
+        String[] ranks = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+        String[] suits = {"yellow", "green", "blue", "red"};
+        int[] points = {1, 1, 1, 1, 1, 1, 1, 1, 1};
+        theDeck = new Deck(ranks, suits, points);
+    }
+
+    public static void main(String[] args) {
+        Player sabrina = new Player("sabrina");
+        Player other = new Player("other person");
+        Game newGame = new Game(sabrina, other);
+        newGame.playGame();
     }
     public void printInstructions() {
         System.out.println("This is a classic game of Uno!");
@@ -26,22 +37,27 @@ public class Game {
                 "until you have no cards left!");
     }
     private void playGame() {
+        Scanner input = new Scanner(System.in);
         printInstructions();
         dealCards();
         while(hasWon() == false) {
-            System.out.println("The top card in the stack is: " + theDeck.get(0));
+            System.out.println("The top card in the stack is: " + stack.get(0));
             System.out.println("Would you like to place a card? Respond false if you have no card that matches the top card in the stack.");
             if(currentPlayer == bPlayer1) {
-                boolean match = p1.nextBoolean();
-                System.out.println("Here's a look at your hand: " + showHand());
-                if(match == false) {
+                String response = input.nextLine();
+                if(response.equalsIgnoreCase("yes")) {
+                    System.out.println("Here's a look at your hand: ");
+                    showHand();
+                }
+                else {
                     addCard();
                 }
                 placeCard();
             }
             else {
-                boolean match2 = p2.nextBoolean();
-                System.out.println("Here's a look at your hand: " + showHand());
+                boolean match2 = input.nextBoolean();
+                System.out.println("Here's a look at your hand: ");
+                showHand();
                 if(match2 == false) {
                     addCard();
                 }
@@ -67,7 +83,7 @@ public class Game {
             p2Hand.add(theDeck.deal());
         }
     }
-    private ArrayList<Card> showHand() {
+    private void showHand() {
         if(currentPlayer == bPlayer1) {
             for(int i = 0; i < p1Hand.size(); i++) {
                 System.out.println(p1Hand.get(i));
@@ -80,40 +96,41 @@ public class Game {
         }
     }
     private void placeCard() {
+        Scanner response = new Scanner(System.in);
         System.out.println("Enter the index of the card you want to play!");
         int index;
         if(currentPlayer == bPlayer1) {
             do {
-                index = p1.nextInt();
-            } while(index > p1.getHand().size() || index < 0)
+                index = response.nextInt();
+            } while(index > p1.getHand().size() || index < 0);
             Card topOfStack = stack.get(0);
             String stackCardRank = topOfStack.getRank();
             String stackCardSuit = topOfStack.getSuit();
             Card fromHand = p1Hand.get(index);
             if(fromHand.getRank().equals(stackCardRank) || fromHand.getSuit().equals(stackCardSuit)) {
-                stack.add(0, p1.get(index));
+                stack.add(0, p1Hand.get(index));
                 System.out.println("You placed the card: " + stack.get(0));
             }
         }
         else {
             do {
-                index = p2.nextInt();
-            } while(index > p2.getHand().size() || index < 0)
+                index = response.nextInt();
+            } while(index > p2.getHand().size() || index < 0);
         }
         Card topOfStack = stack.get(0);
         String stackCardRank = topOfStack.getRank();
         String stackCardSuit = topOfStack.getSuit();
         Card fromHand = p2Hand.get(index);
         if(fromHand.getRank().equals(stackCardRank) || fromHand.getSuit().equals(stackCardSuit)) {
-            stack.add(0, p2.get(index));
+            stack.add(0, p2Hand.get(index));
             System.out.println("You placed the card: " + stack.get(0));
         }
     }
     private void addCard() {
         if(currentPlayer == bPlayer1) {
-            p1Hand.deal();
+            p1Hand.add(theDeck.deal());
         }
-        p2Hand.deal();
+        p2Hand.add(theDeck.deal());
     }
     public boolean hasWon() {
         if(currentPlayer == bPlayer1) {

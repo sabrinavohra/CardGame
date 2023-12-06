@@ -19,6 +19,7 @@ public class Deck {
         if (cardsLeft == 0) {
             return true;
         }
+        return false;
     }
 
     public int getCardsLeft() {
@@ -34,7 +35,7 @@ public class Deck {
 
     public void shuffle() {
         cardsLeft = cards.size();
-        for(int i = cardsLeft; i > -1; i--) {
+        for(int i = cardsLeft; i > 0; i--) {
             int r = (int)(Math.random() * cardsLeft);
             Card exchange = cards.get(r);
             cards.set(r, cards.get(i));
