@@ -28,12 +28,12 @@ public class Game {
     private void playGame() {
         printInstructions();
         dealCards();
-        System.out.println(theDeck.deal());
         while(hasWon() == false) {
             System.out.println("The top card in the stack is: " + theDeck.get(0));
             System.out.println("Would you like to place a card? Respond false if you have no card that matches the top card in the stack.");
             if(currentPlayer == bPlayer1) {
                 boolean match = p1.nextBoolean();
+                System.out.println("Here's a look at your hand: " + showHand());
                 if(match == false) {
                     addCard();
                 }
@@ -41,6 +41,7 @@ public class Game {
             }
             else {
                 boolean match2 = p2.nextBoolean();
+                System.out.println("Here's a look at your hand: " + showHand());
                 if(match2 == false) {
                     addCard();
                 }
