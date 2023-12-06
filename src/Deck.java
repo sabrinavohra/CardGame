@@ -30,12 +30,13 @@ public class Deck {
         if(cards.size() == 0) {
             return null;
         }
+        cardsLeft--;
         return cards.get(cardsLeft);
     }
 
     public void shuffle() {
         cardsLeft = cards.size();
-        for(int i = cardsLeft; i > 0; i--) {
+        for(int i = cardsLeft - 1; i > -1; i--) {
             int r = (int)(Math.random() * cardsLeft);
             Card exchange = cards.get(r);
             cards.set(r, cards.get(i));

@@ -23,6 +23,7 @@ public class Game {
         String[] suits = {"yellow", "green", "blue", "red"};
         int[] points = {1, 1, 1, 1, 1, 1, 1, 1, 1};
         theDeck = new Deck(ranks, suits, points);
+        stack = new ArrayList<Card>();
     }
 
     public static void main(String[] args) {
@@ -42,11 +43,13 @@ public class Game {
         dealCards();
         while(hasWon() == false) {
             System.out.println("The top card in the stack is: " + stack.get(0));
+            System.out.println("Here's your hand: ");
+            showHand();
             System.out.println("Would you like to place a card? Respond false if you have no card that matches the top card in the stack.");
+            String response = input.nextLine();
             if(currentPlayer == bPlayer1) {
-                String response = input.nextLine();
                 if(response.equalsIgnoreCase("yes")) {
-                    System.out.println("Here's a look at your hand: ");
+                    System.out.println("Here's your hand: ");
                     showHand();
                 }
                 else {
@@ -82,17 +85,20 @@ public class Game {
             p1Hand.add(theDeck.deal());
             p2Hand.add(theDeck.deal());
         }
+        stack.add(theDeck.deal());
     }
     private void showHand() {
         if(currentPlayer == bPlayer1) {
             for(int i = 0; i < p1Hand.size(); i++) {
-                System.out.println(p1Hand.get(i));
+                System.out.print(p1Hand.get(i) + ", ");
             }
+            System.out.println();
         }
         else {
             for(int i = 0; i < p2Hand.size(); i++) {
-                System.out.println(p2Hand.get(i));
+                System.out.print(p2Hand.get(i) + ", ");
             }
+            System.out.println();
         }
     }
     private void placeCard() {
@@ -100,9 +106,10 @@ public class Game {
         System.out.println("Enter the index of the card you want to play!");
         int index;
         if(currentPlayer == bPlayer1) {
+
             do {
                 index = response.nextInt();
-            } while(index > p1.getHand().size() || index < 0);
+            } while(index >= p1Hand.size() || index < 0);
             Card topOfStack = stack.get(0);
             String stackCardRank = topOfStack.getRank();
             String stackCardSuit = topOfStack.getSuit();
@@ -115,7 +122,7 @@ public class Game {
         else {
             do {
                 index = response.nextInt();
-            } while(index > p2.getHand().size() || index < 0);
+            } while(index > p2Hand.size() || index < 0);
         }
         Card topOfStack = stack.get(0);
         String stackCardRank = topOfStack.getRank();
