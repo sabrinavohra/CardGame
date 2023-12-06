@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class Deck {
-    private ArrayList<Integer> cards;
+    private ArrayList<Card> cards;
     private int cardsLeft;
 
     public Deck(String[] ranks, String[] suits, int[] values) {
-        cards = new ArrayList<Integer>();
-        for (int i = 0; i < ranks; i++) {
-            for (int j = 0; j < suits; j++) {
-                Card newCard = new Card(ranks[i], suits[j], values[i]);
+        cards = new ArrayList<Card>();
+        for (int i = 0; i < ranks.length; i++) {
+            for (int j = 0; j < suits.length; j++) {
+                Card newCard = new Card(values[i], suits[j], ranks[i]);
                 cards.add(newCard);
                 cardsLeft++;
             }
@@ -34,11 +34,11 @@ public class Deck {
 
     public void shuffle() {
         cardsLeft = cards.size();
-        for(int i = cardsLeft; i < cardsLeft; i--) {
-            int r = int(Math.random() * cardsLeft);
-            Card exchange = cards[r];
-            cards[r] = cards[i];
-            cards[i] = exchange;
+        for(int i = cardsLeft; i > -1; i--) {
+            int r = (int)(Math.random() * cardsLeft);
+            Card exchange = cards.get(r);
+            cards.set(r, cards.get(i));
+            cards.set(i, exchange);
         }
     }
 }

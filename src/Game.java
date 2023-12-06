@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Game {
     private Player p1;
     private ArrayList<Card> p1Hand;
@@ -5,6 +7,10 @@ public class Game {
     private ArrayList<Card> p2Hand;
     private Deck theDeck;
     private ArrayList<Card> stack;
+    private boolean currentPlayer;
+    private ArrayList<Card> currentPlayerHand;
+    public static boolean bPlayer1 = true;
+    public static boolean bPlayer2 = false;
 
     public Game(Player player1, Player player2)
     {
@@ -12,6 +18,7 @@ public class Game {
         p1Hand = new ArrayList<Card>();
         p2 = player2;
         p2Hand = new ArrayList<Card>();
+        currentPlayer = true;
     }
     public void printInstructions() {
         System.out.println("This is a classic game of Uno!");
@@ -21,19 +28,16 @@ public class Game {
     private void playGame() {
         printInstructions();
         dealCards();
-        //putDeckDown();
-        //flipFirstCard();
-        //do while(someone hasn't won / hasn't gotten rid of all their cards)
+        System.out.println(theDeck.deal());
+        while()
+        //while(someone hasn't won / hasn't gotten rid of all their cards)
             //let player put down card that matches with the one on top of stack in at least one way (check) - placeCard();
             //let other play do the same thing - placeCard();
             //if a player (has no cards that match the top one)
                 //add card to their hand until they can put down a card - addCard();
-            //after each turn check if: they have won - hasWon();
-                //end game (!!) if they have and ask if they want to play again - playAgain();
+            //after each turn check if: they have won - hasWon() and if a player hasn't won then change currentPlayer to other player;
+                // outside of while loop: end game (!!) if they have and ask if they want to play again - playAgain();
                 //continue game if they haven't
-
-
-
         //System.out.println(theDeck.deal());
     }
 
@@ -44,14 +48,46 @@ public class Game {
             p2Hand.add(theDeck.deal());
         }
     }
+    private ArrayList<Card> showHand() {
+        if(currentPlayer == bPlayer1) {
+            for(int i = 0; i < p1Hand.size(); i++) {
+                System.out.println(p1Hand.get(i));
+            }
+        }
+        else {
+            for(int i = 0; i < p2Hand.size(); i++) {
+                System.out.println(p2Hand.get(i));
+            }
+        }
+    }
     private void placeCard() {
         System.out.println("Enter the index of the card you want to play!");
-        int index = p1.nextInt();
-        // create variables for points and suits so they can be compared
-        if(p1.getHand().size() < index) {
-            if(p1.getHand(index) == stack.get(0)
+        int index;
+        do {
+            index = currentPlayer.nextInt();
+        }
+        while(index > p1.getHand().size() || index < 0)
+        Card topOfStack = stack.get(0);
+        String stackCardRank = topOfStack.getRank();
+        String stackCardSuit = topOfStack.getSuit();
+        Card fromHand = p1Hand.get(index);
+        if(fromHand.getRank().equals(stackCardRank) || fromHand.getSuit().equals(stackCardSuit)) {
             stack.add(0, p1.get(index));
-            System.out.println("You placed the card: "stack.get(0));
+            System.out.println("You placed the card: " + stack.get(0));
+        }
+    }
+    public boolean hasWon() {
+        if(currentPlayer == bPlayer1) {
+            if(p1Hand.size() == 0) {
+                return true;
+            }
+            return false;
+        }
+        else {
+            if(p2Hand.size() == 0) {
+                return true;
+            }
+            return false;
         }
     }
 }
