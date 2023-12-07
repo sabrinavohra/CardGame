@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="I think it works!" />
+    <list default="true" id="4c8675b8-cb90-4564-a7a3-a7121d5718ad" name="Changes" comment="Rearranged order of how game is played.">
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701932845720</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Rearranged order of how game is played.">
+      <option name="closed" value="true" />
+      <created>1701968310117</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701968310117</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,7 +211,8 @@
     <MESSAGE value="Fixed errors! Tested game." />
     <MESSAGE value="Tested!" />
     <MESSAGE value="I think it works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="I think it works!" />
+    <MESSAGE value="Rearranged order of how game is played." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rearranged order of how game is played." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

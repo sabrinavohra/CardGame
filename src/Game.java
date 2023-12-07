@@ -1,9 +1,10 @@
 import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
+    // Declares instance variables
+    // Declares separate different variable for Players
     private Player p1;
     private ArrayList<Card> p1Hand;
     private Player p2;
