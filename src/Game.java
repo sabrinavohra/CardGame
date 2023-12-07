@@ -45,29 +45,29 @@ public class Game {
         dealCards();
         while (hasWon() == false) {
             if (currentPlayer == bPlayer1) {
+                System.out.println("Here's " + p1.getName() + "'s hand: ");
+                showHand();
                 System.out.println("The top card in the stack is: " + stack.get(0));
                 System.out.println("Would you (" + p1.getName() + ") like to place a card? Respond no if you have no card that matches the top card in the stack.");
                 String response = input.nextLine();
                 if (response.equalsIgnoreCase("yes")) {
-                    System.out.println("Here's " + p1.getName() + "'s hand: ");
-                    showHand();
+                    placeCard();
                 } else {
                     addCard();
                 }
-                placeCard();
                 currentPlayer = !currentPlayer;
             }
+            System.out.println("Here's" + p2.getName() + "'s hand: ");
+            showHand();
             System.out.println("The top card in the stack is: " + stack.get(0));
             System.out.println("Would you (" + p2.getName() + ") like to place a card? Respond no if you have no card that matches the top card in the stack.");
             String response = input.nextLine();
             if(response.equalsIgnoreCase("yes")) {
-                System.out.println("Here's a look at your hand: ");
-                showHand();
+                placeCard();
             }
             else {
                 addCard();
             }
-            placeCard();
             currentPlayer = !currentPlayer;
         }
         System.out.println("Great game!");
