@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -41,34 +43,35 @@ public class Game {
         Scanner input = new Scanner(System.in);
         printInstructions();
         dealCards();
-        while(hasWon() == false) {
-            System.out.println("The top card in the stack is: " + stack.get(0));
-            System.out.println("Here's your hand: ");
-            showHand();
-            System.out.println("Would you like to place a card? Respond false if you have no card that matches the top card in the stack.");
-            String response = input.nextLine();
-            if(currentPlayer == bPlayer1) {
-                if(response.equalsIgnoreCase("yes")) {
-                    System.out.println("Here's your hand: ");
+        while (hasWon() == false) {
+            if (currentPlayer == bPlayer1) {
+                System.out.println("The top card in the stack is: " + stack.get(0));
+                System.out.println("Would you (" + p1.getName() + ") like to place a card? Respond no if you have no card that matches the top card in the stack.");
+                String response = input.nextLine();
+                if (response.equalsIgnoreCase("yes")) {
+                    System.out.println("Here's " + p1.getName() + "'s hand: ");
                     showHand();
-                }
-                else {
+                } else {
                     addCard();
                 }
                 placeCard();
+                currentPlayer = !currentPlayer;
             }
-            else {
-                boolean match2 = input.nextBoolean();
+            System.out.println("The top card in the stack is: " + stack.get(0));
+            System.out.println("Would you (" + p2.getName() + ") like to place a card? Respond no if you have no card that matches the top card in the stack.");
+            String response = input.nextLine();
+            if(response.equalsIgnoreCase("yes")) {
                 System.out.println("Here's a look at your hand: ");
                 showHand();
-                if(match2 == false) {
-                    addCard();
-                }
-                placeCard();
             }
+            else {
+                addCard();
+            }
+            placeCard();
             currentPlayer = !currentPlayer;
         }
         System.out.println("Great game!");
+    }
         //while(someone hasn't won / hasn't gotten rid of all their cards)
             //let player put down card that matches with the one on top of stack in at least one way (check) - placeCard();
             //let other play do the same thing - placeCard();
@@ -77,7 +80,6 @@ public class Game {
             //after each turn check if: they have won - hasWon() and if a player hasn't won then change currentPlayer to other player;
                 // outside of while loop: end game (!!) if they have and ask if they want to play again - playAgain();
                 //continue game if they haven't
-    }
 
     private void dealCards() {
         theDeck.shuffle();
@@ -106,7 +108,6 @@ public class Game {
         System.out.println("Enter the index of the card you want to play!");
         int index;
         if(currentPlayer == bPlayer1) {
-
             do {
                 index = response.nextInt();
             } while(index >= p1Hand.size() || index < 0);
@@ -139,7 +140,7 @@ public class Game {
         }
         p2Hand.add(theDeck.deal());
     }
-    public boolean hasWon() {
+    private boolean hasWon() {
         if(currentPlayer == bPlayer1) {
             if(p1Hand.size() == 0) {
                 return true;
