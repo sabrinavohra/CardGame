@@ -29,12 +29,6 @@ public class Game {
         stack = new ArrayList<Card>();
     }
 
-    public static void main(String[] args) {
-        Player sabrina = new Player("sabrina");
-        Player other = new Player("other person");
-        Game newGame = new Game(sabrina, other);
-        newGame.playGame();
-    }
     public void printInstructions() {
         System.out.println("This is a classic game of Uno!");
         System.out.println("Put down a card that matches the one on the top of the deck in either color or number, " +
@@ -58,7 +52,7 @@ public class Game {
                 }
                 currentPlayer = !currentPlayer;
             }
-            System.out.println("Here's" + p2.getName() + "'s hand: ");
+            System.out.println("Here's " + p2.getName() + "'s hand: ");
             showHand();
             System.out.println("The top card in the stack is: " + stack.get(0));
             System.out.println("Would you (" + p2.getName() + ") like to place a card? Respond no if you have no card that matches the top card in the stack.");
@@ -118,7 +112,8 @@ public class Game {
             Card fromHand = p1Hand.get(index);
             if(fromHand.getRank().equals(stackCardRank) || fromHand.getSuit().equals(stackCardSuit)) {
                 stack.add(0, p1Hand.get(index));
-                System.out.println("You placed the card: " + stack.get(0));
+                //System.out.println("You placed the card " + fromHand);
+                p1Hand.remove(fromHand);
             }
         }
         else {
@@ -132,7 +127,9 @@ public class Game {
         Card fromHand = p2Hand.get(index);
         if(fromHand.getRank().equals(stackCardRank) || fromHand.getSuit().equals(stackCardSuit)) {
             stack.add(0, p2Hand.get(index));
-            System.out.println("You placed the card: " + stack.get(0));
+            //System.out.println("You placed the card " + fromHand);
+            p2Hand.remove(fromHand);
+            //System.out.println("You placed the card: " + stack.get(0));
         }
     }
     private void addCard() {
@@ -146,13 +143,23 @@ public class Game {
             if(p1Hand.size() == 0) {
                 return true;
             }
-            return false;
+            else {
+                return false;
+            }
         }
         else {
             if(p2Hand.size() == 0) {
                 return true;
             }
-            return false;
+            else {
+                return false;
+            }
         }
+    }
+    public static void main(String[] args) {
+        Player sabrina = new Player("sabrina");
+        Player other = new Player("ron");
+        Game newGame = new Game(sabrina, other);
+        newGame.playGame();
     }
 }
